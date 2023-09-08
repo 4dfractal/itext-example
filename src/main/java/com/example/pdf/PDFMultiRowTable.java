@@ -34,25 +34,38 @@ public class PDFMultiRowTable {
             headerRow.addCell("Event");
             headerRow.addCell("Details");
 
-            PdfPTable firstRow = new PdfPTable(3);
-            firstRow.setKeepTogether(true);
-            firstRow.addCell("date 1");
-            firstRow.addCell("event 2 1");
-            firstRow.addCell("more\ndetails 2 1");
+//            PdfPTable firstRow = new PdfPTable(3);
+//            firstRow.setKeepTogether(true);
+//            firstRow.addCell("date 1");
+//            firstRow.addCell("event 2 1");
+//            firstRow.addCell("more\ndetails 2 1");
 
-            PdfPTable secondRow = new PdfPTable(3);
+            PdfPTable secondRow = new PdfPTable(4);
             secondRow.setKeepTogether(true);
-            PdfPCell cell = new PdfPCell(new Phrase("date 2"));
+            PdfPCell cell = new PdfPCell(new Phrase("date 1"));
             cell.setRowspan(2);
             secondRow.addCell(cell);
-            secondRow.addCell("event 2 1");
-            secondRow.addCell("more\ndetails 2 1");
-            secondRow.addCell("event 2 2");
-            secondRow.addCell("details 2 2");
+            secondRow.addCell("event 1");
+            secondRow.addCell("more\ndetails 2");
+            secondRow.addCell("event 3");
+            secondRow.addCell("details 4");
+            secondRow.addCell("event 5");
+            secondRow.addCell("details 6");
+            cell = new PdfPCell(new Phrase("date 2"));
+            cell.setRowspan(2);
+            secondRow.addCell(cell);
+            secondRow.addCell("event 11");
+            secondRow.addCell("more\ndetails 12");
+            secondRow.addCell("event 13");
+            secondRow.addCell("details 14");
+            secondRow.addCell("event 15");
+            secondRow.addCell("details 16");
 
             document.add(headerRow);
-            document.add(firstRow);
+            //document.add(firstRow);
             document.add(secondRow);
+
+            document.newPage();
 
             document.close();
             
